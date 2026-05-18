@@ -1,0 +1,75 @@
+/* Chat Modal Styles */
+.chat-modal {
+  @apply fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4;
+}
+
+.chat-modal-content {
+  @apply bg-white rounded-xl shadow-2xl w-full max-w-4xl h-4/5 flex flex-col;
+}
+
+.chat-messages-container {
+  @apply flex-1 overflow-y-auto p-6 space-y-4;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(156, 163, 175, 0.5) transparent;
+}
+
+.chat-messages-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.chat-messages-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.chat-messages-container::-webkit-scrollbar-thumb {
+  background-color: rgba(156, 163, 175, 0.5);
+  border-radius: 3px;
+}
+
+.chat-message {
+  @apply p-4 rounded-lg border transition-all duration-200;
+}
+
+.chat-message:hover {
+  @apply shadow-sm;
+}
+
+.chat-message-human {
+  @apply bg-blue-50 border-blue-200 text-blue-900;
+}
+
+.chat-message-ai {
+  @apply bg-purple-50 border-purple-200 text-purple-900;
+}
+
+.chat-message-system {
+  @apply bg-gray-50 border-gray-200 text-gray-700;
+}
+
+.session-card {
+  @apply p-4 border border-gray-200 rounded-lg hover:bg-purple-50 hover:border-purple-300 cursor-pointer transition-all duration-200;
+}
+
+.session-card:hover {
+  @apply transform scale-[1.02] shadow-sm;
+}
+
+.loading-spinner {
+  @apply animate-spin rounded-full border-b-2 border-purple-600;
+}
+
+.system-toggle-button {
+  @apply px-3 py-1 rounded-lg text-sm font-medium flex items-center space-x-1 transition-colors;
+}
+
+.system-toggle-button.active {
+  @apply bg-purple-100 text-purple-700;
+}
+
+.system-toggle-button.inactive {
+  @apply bg-gray-100 text-gray-600;
+}
+
+.system-toggle-button.inactive:hover {
+  @apply bg-gray-200;
+}

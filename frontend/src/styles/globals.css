@@ -1,0 +1,62 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@layer base {
+  /* Variables CSS para consistencia */
+  :root {
+    --color-accent: 180, 48, 204;
+    --color-accent-light: 218, 106, 238;
+    --radius-sm: 0.5rem;
+    --radius-md: 0.75rem;
+    --radius-lg: 1rem;
+  }
+  
+  /* Estilos base mejorados */
+  body {
+    @apply bg-background text-textPrimary antialiased;
+  }
+  
+  /* Scroll suave */
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Botones estandarizados */
+  .btn-primary {
+    @apply bg-accent text-white px-4 py-2 rounded-lg font-medium hover:bg-highlight transition-all duration-200 shadow-sm;
+  }
+  
+  .btn-secondary {
+    @apply bg-buttonSecondary text-textPrimary px-4 py-2 rounded-lg font-medium hover:bg-surfaceHover border border-border transition-all duration-200;
+  }
+  
+  .btn-ghost {
+    @apply text-textSecondary px-4 py-2 rounded-lg font-medium hover:bg-muted hover:text-textPrimary transition-all duration-200;
+  }
+  
+  /* Cards estandarizadas */
+  .card {
+    @apply bg-surface rounded-xl shadow-card border border-border;
+  }
+  
+  .card-hover {
+    @apply card hover:shadow-elegant-lg transition-all duration-200 hover:-translate-y-1;
+  }
+  
+  /* Inputs estandarizados */
+  .input-field {
+    @apply w-full px-3 py-2 border border-border rounded-lg bg-surface text-textPrimary placeholder-textMuted focus:outline-none focus:ring-2 focus:ring-focus focus:border-focus transition-all duration-200;
+  }
+  
+  /* Estados de validación */
+  .input-valid {
+    @apply border-successBorder focus:ring-successBorder/20;
+  }
+  
+  .input-invalid {
+    @apply border-errorBorder focus:ring-errorBorder/20;
+  }
+}

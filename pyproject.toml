@@ -1,0 +1,30 @@
+[tool.black]
+# Longitud máxima de línea (PEP8 recomienda 79–88; Black usa 88 por defecto)
+line-length = 88
+
+# Versión objetivo de Python; ajusta según la tuya (p. ej. 'py311' si usas 3.11)
+target-version = ['py310']
+
+# Excluir directorios que no deben formatearse
+# - migrations: no tocamos migraciones auto-generadas
+# - static, media: no son código Python
+exclude = '''
+/(
+  migrations
+  | static
+  | media
+  | .venv
+  | venv
+  | README.md
+)/
+'''
+
+[tool.isort]
+# Perfil compatible con Black
+profile = "black"
+
+# Alinea la longitud de línea con Black
+line_length = 88
+
+# Evita ordenar imports en migraciones generadas
+skip_glob = ["*/migrations/*", "*/.venv/*","*/venv/*","README.md"]
